@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  bind9:
+    container_name: dns-bind
+    build: ./
+    ports:
+    - "53:53/udp"
+    - "53:53/tcp"
+    volumes:
+    - ./conf/bind:/etc/bind 

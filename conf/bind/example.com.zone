@@ -1,0 +1,27 @@
+$TTL 300
+$ORIGIN example.com.
+
+;SOA record
+;name class type nameserver   contact (sn ref ret ex min)
+@     IN     SOA   ns1.example.com    admin.example.com. (
+					2017031088 ;serial number
+					3600	   ; refresh
+					180	   ; update retry
+					1209600    ; expiry
+					300 	   ; nxdomain ttl
+					)
+
+; [name] [ttl] [class] type data
+
+; NS records
+@ 36000 IN NS ns1.example.com.
+@ 36000 IN NS ns2.example.com.
+
+; A records or CNAME records
+
+ns1  3600 IN A 202.123.123.123
+ns2  3600 IN A 202.123.123.123
+@    300  IN A 202.123.123.123
+www  300  IN A 202.123.123.123
+test 300 IN CNAME test.example.comc.cdnhwc1.com.
+
